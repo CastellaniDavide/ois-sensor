@@ -1,42 +1,27 @@
-/**
- * @file sensor.cpp
- *
- * @version 01.01 2021519
- *
- * @brief https://training.olinfo.it/#/task/ois_sensor/statement
- *
- * @ingroup sensor
- * (Note: this needs exactly one @defgroup somewhere)
- *
- * @author Castellani Davide
- *
- * Contact: contacts@castellanidavide.it
- *
- */
-
-// Includes
 #include <bits/stdc++.h>
 using namespace std;
 
-// Variabiles
-int N;
+#define DEBUG
 
-// Main code
-int main()
-{
-  // Cncomment the following lines if you want to read/write from files
-  // freopen("input.txt", "r", stdin);
-  // freopen("output.txt", "w", stdout);
+int N, sol, tmp, last;
 
-  // Input
-  cin >> N;
+int main() {
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
 
-  // Code
-  // ...
+    cin >> N;
+    sol = 0;
 
-  // Output
-  cout << N << endl;
+    for (size_t i = 0; i < N; ++i) {
+        cin >> tmp;
 
-  // End
-  return 0;
+        if (tmp == -1)
+            tmp = last;
+        else
+            last = tmp;
+
+        sol += tmp;
+    }
+
+    cout << sol << endl;
 }
